@@ -1,15 +1,55 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
+:root {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+:root {
+  color-scheme: dark;
+  color: #F8FAFC;
+  background: #0F172A;
+  font-family: var(--font-sans);
+  --primary: #2563EB;
+  --secondary: #4F46E5;
+  --accent: #06B6D4;
+  --bg: #0F172A;
+  --bg-secondary: #1E293B;
+  --card: #1E293B;
+  --border: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+}
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  min-height: 100%;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 25%),
+    linear-gradient(180deg, #0F172A 0%, #111827 100%);
+  color: var(--text-primary);
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.4);
+  color: #F8FAFC;
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.76);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+.glow-border {
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12);
+}
+
+.gradient-ring {
+  background: linear-gradient(135deg, #2563EB 0%, #4F46E5 55%, #06B6D4 100%);
 }
